@@ -2,9 +2,9 @@
 
 # -- Project information
 
-project = 'Lumache'
-copyright = '2021, Graziella'
-author = 'Graziella'
+project = 'EPITA PIE docker'
+copyright = '2021, Pierre Bls'
+author = 'Pierre Bls'
 
 release = '0.1'
 version = '0.1.0'

@@ -13,6 +13,6 @@ Contents
 
 .. toctree::
 
-   Windows Get started
+   windows
 
 EPITA PIE Docker has its documentation hosted on Read the Docs.
