@@ -109,17 +109,19 @@ Now, the command to run PIE image:
 
 .. code-block:: bash
 
-   docker run --name docker-pie --rm -w /root/home -e HOME=/root/home -v ${HOME}\my_awersome_project:/root/home registry.cri.epita.fr/cri/infrastructure/nixpie/nixos-pie:latest
+   docker run -it --name docker-pie --rm -w /root/home -e HOME=/root/home -v ${HOME}\my_awersome_project:/root/home registry.cri.epita.fr/cri/infrastructure/nixpie/nixos-pie:latest sh
 
 Let's understand it:
 
 *  **docker run**, you already know
+*  **-it**, interactive mode (permit to have interaction with the image)
 *  **--name**, name for the conteiner, here *docker-pie*
 *  **--rm**, auto-remove the conteiner when we close it
 *  **-w**, set working directory inside the conteiner, here */root/home*
 *  **-e**, set environement variable inside the conteiner, here $HOME="/root/home"
 *  **-v**, bind a directory of your laptop to one on the conteiner (a kind of volume), here we bind the previously created directory on "*/home/root*"
 *  **registry.cri.epita.fr/cri/infrastructure/nixpie/nixos-pie:latest**, the latest version of the PIE image
+*  **sh**, programme to run interactively
 
 The image is heavy, it took time to download it. Don't worry we only download once,  when a new version are available.
 After a few moments of downloading, your conteiner should be running, congratulation !
