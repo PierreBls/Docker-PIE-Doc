@@ -95,6 +95,8 @@ That's works, let's remove the conteiner:
    # Delete the conteiner
    docker rm <conteiner_id_or_name>
 
+
+
 PIE image
 ^^^^^^^^^
 
@@ -128,4 +130,25 @@ After a few moments of downloading, your conteiner should be running, congratula
 
 VsCode x Docker
 ---------------
---> Soon
+
+Optimization
+---------------
+Maybe since you follow this tutorial your Laptop is slower than before, even when with no runnning conteiner. 
+That's because the **Docker Engine** are always running and so **WSL** too. Let's have a look to the **Tasks manager**.
+
+.. figure:: imgs/tasks_manager.PNG
+   :align: center
+   :alt: alternate text
+   :figclass: align-center
+
+   Tasks manager
+
+What's the **Vmmem** process ?
+The vmmem process is a virtual process that the system synthesizes to represent the memory and CPU resources consumed by your virtual machines.
+Even with any vm or conteiner runing this process consume a lot of ressources (more information `here <https://skeptric.com/vmemm-using-all-ram/>`_).
+
+
+What can we do to limite consumation ?
+First go to **Startup** tab inside the **Tasks manager** and check that **Docker Desktop** are disabled (because Docker Desktop auto start WLS). 
+Also **WSL** resources consumation can be limited by writing **.wslconfig** under  *C:Users/<user_name>/.wslconfig*, `documentation here <https://docs.microsoft.com/en-us/windows/wsl/wsl-config#global-configuration-options-with-wslconfig>`_. 
+Be carfule, if WSL is too much restricted, perhaps your conteiner will be slow.
